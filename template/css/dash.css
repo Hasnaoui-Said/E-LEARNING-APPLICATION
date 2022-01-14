@@ -1,5 +1,7 @@
-
-
-.sidebar{
-    background: #FAFFC1;
+.cards-home {
+}
+@media screen and (min-width: 1024px) {
+  .cards-home {
+    width: calc(100% - 270px);
+  }
 }
