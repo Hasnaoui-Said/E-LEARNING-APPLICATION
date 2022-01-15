@@ -1,8 +1,3 @@
 
-:root {
-    --bgc-gradient: linear-gradient(69.66deg, #00c1fe 19.39%, #faffc1 96.69%);
-    --font-family: "Montserrat", sans-serif;
-}
-.bg-gradient{
-    background: var(--bgc-gradient);
-}
+
+
