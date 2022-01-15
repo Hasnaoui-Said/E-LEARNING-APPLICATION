@@ -1,7 +1,8 @@
-.cards-home {
+
+:root {
+    --bgc-gradient: linear-gradient(69.66deg, #00c1fe 19.39%, #faffc1 96.69%);
+    --font-family: "Montserrat", sans-serif;
 }
-@media screen and (min-width: 1024px) {
-  .cards-home {
-    width: calc(100% - 270px);
-  }
+.bg-gradient{
+    background: var(--bgc-gradient);
 }
