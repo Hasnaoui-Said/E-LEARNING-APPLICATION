@@ -37,7 +37,7 @@
             </li>
 
             <li class="list-none">
-            <a href="Home.html" class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
+            <a href="Home.php" class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 19 17" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -49,7 +49,7 @@
             </li>
 
             <li class="list-none">
-                <a href="Home.html"
+                <a href="Home.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 12 15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
             </li>
 
             <li class="list-none">
-                <a href="students.html"
+                <a href="students.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 20 12" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@
             </li>
 
             <li class="list-none">
-                <a href="payments.html"
+                <a href="payments.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 15 15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,7 @@
             </li>
 
             <li class="list-none">
-                <a href="Home.html"
+                <a href="Home.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 13 17" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
             </li>
 
             <li class="list-none">
-                <a href="Home.html"
+                <a href="Home.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 15 15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,7 @@
             </li>
 
             <li class="list-none md:absolute md:bottom-1 lg:bottom-2 xl:bottom-3 2xl:bottom-5 relative">
-                <a href="../../index.html"
+                <a href="../../index.php"
                     class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                     <span class="lg:text-[15px] xl:text-[16px] 2xl:text-[23px] text-[14px] ml-[41px] cursor-pointer">Logout</span>
                     <svg class="ml-4 cursor-pointer" width="25" height="22" viewBox="0 0 17 13" fill="none"
