@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="row m-2">
-                    <form class="form" action="template/components/dashboard.php">
+                    <form class="form" action="template/components/home.php">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-2">
