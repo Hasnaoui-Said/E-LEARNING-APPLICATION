@@ -10,7 +10,7 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <!-- style -->
-    <link rel="stylesheet" href="../css/dash.css" />
+    <link rel="stylesheet" href="../css/dash.css"/>
 </head>
 
 <body class="font-[Montserrat] bg-[#E5E5E5]">
@@ -25,7 +25,7 @@
             <li class="list-none p-2.5 m-3 flex flex-col items-center rounded-md px-4 duration-300 text-black">
                 <img class="rounded-full cursor-pointer" src="../../assets/images/pexels-photo.png" alt="" width="90" />
                 <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1">Admin name</span>
-                <a href="notfound.html" class="lg:text-[17px] xl:text-[18px] 2xl:text-[23px] text-[15px] hover:text-[#00C1FE] cursor-pointer mt-0">Admin</a>
+                <a href="#" class="lg:text-[17px] xl:text-[18px] 2xl:text-[23px] text-[15px] hover:text-[#00C1FE] cursor-pointer mt-0">Admin</a>
             </li>
 
             <li
@@ -88,7 +88,7 @@
             </li>
 
             <li class="list-none">
-                <a href="Home.php"
+                <a href="#"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 13 17" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
             </li>
 
             <li class="list-none">
-                <a href="Home.php"
+                <a href="#"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 15 15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +113,7 @@
                 </a>
             </li>
 
-            <li class="list-none md:absolute md:bottom-1 lg:bottom-2 xl:bottom-3 2xl:bottom-5 relative">
+            <li class="list-none xl:absolute xl:bottom-3 2xl:bottom-5 relative">
                 <a href="../../index.php"
                     class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                     <span class="lg:text-[15px] xl:text-[16px] 2xl:text-[23px] text-[14px] ml-[41px] cursor-pointer">Logout</span>
