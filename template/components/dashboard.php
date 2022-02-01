@@ -9,35 +9,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <!-- style -->
-    <link rel="stylesheet" href="../css/dash.css"/>
 </head>
 
 <body class="font-[Montserrat] bg-[#E5E5E5]">
     <nav id="mon-sidebar">
-        <ul class="sidebar p-3 z-50 fixed flex flex-col items-center top-0 bottom-0 lg:left-0 left-[-270px] xl:w-[300px] 2xl:w-[400px] w-[270px] overflow-y-auto text-center text-black bg-[#FAFFC1]">
-            <li class="list-none p-3 text-black text-xl w-[200px] flex lg:justify-start lg:ml-[-10px] justify-between items-center">
-                    <h1 class="pl-2 bold text-[25px] border-l-[4px] border-[#00C1FE] cursor-pointer">
-                        E-classe
-                    </h1>
-                    <i class="bi bi-x px-3 py-1 text-black cursor-pointer lg:hidden" onclick="Opppen()"></i>
+        <ul class="sidebar list-none p-3 z-50 fixed flex flex-col items-center top-0 bottom-0 lg:left-0 left-[-270px] xl:w-[300px] 2xl:w-[400px] w-[270px] overflow-y-auto  text-center text-black bg-[#FAFFC1]">
+            <li class="text-black text-xl w-[200px] flex lg:justify-start lg:ml-[-10px] justify-between items-center">
+                <h1 class="pl-2 font-bold text-[25px] border-l-[4px] border-[#00C1FE] cursor-pointer">
+                    E-classe
+                </h1>
+                <i class="bi bi-x px-3 py-1 text-black cursor-pointer lg:hidden" onclick="Opppen()"></i>
             </li>
-            <li class="list-none p-2.5 m-3 flex flex-col items-center rounded-md px-4 duration-300 text-black">
-                <img class="rounded-full cursor-pointer" src="../../assets/images/pexels-photo.png" alt="" width="90" />
-                <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1">Admin name</span>
+            <li class="p-2.5 m-3 flex flex-col items-center rounded-md px-4 duration-300 text-black">
+                <img class="rounded-full cursor-pointer" src="../../assets/images/pexels-photo.png" alt="" width="80" />
+                <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1 font-bold">Admin name</span>
                 <a href="#" class="lg:text-[17px] xl:text-[18px] 2xl:text-[23px] text-[15px] hover:text-[#00C1FE] cursor-pointer mt-0">Admin</a>
             </li>
 
             <li
-                class="list-none sm:hidden block lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[240px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#fff] text-black">
+                class="sm:hidden block lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[240px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#fff] text-black">
                 <input
                     class="p-3 text-[14px] text-[#000] w-[100%] h-[37px] bg-transparent border-[1px] border-r-0 rounded-[8px] rounded-r-none focus:outline-none"
                     type="search" placeholder="search" />
                 <i class="bi bi-search text-sm text-[#C4C4C4] text-[21px] border-[1px] rounded-[8px] border-l-0 rounded-l-none p-1.5 h-[37px] bg-transparente"></i>
             </li>
 
-            <li class="list-none">
-            <a href="Home.php" class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
+            <li class="">
+            <a href="home.php" class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 19 17" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -48,8 +46,8 @@
                 </a>
             </li>
 
-            <li class="list-none">
-                <a href="Home.php"
+            <li class="">
+                <a href="#"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 12 15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +59,7 @@
             </a>
             </li>
 
-            <li class="list-none">
+            <li class="">
                 <a href="students.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 20 12" fill="none"
@@ -74,7 +72,7 @@
                 </a>
             </li>
 
-            <li class="list-none">
+            <li class="">
                 <a href="payments.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 15 15" fill="none"
@@ -87,7 +85,7 @@
                 </a>
             </li>
 
-            <li class="list-none">
+            <li class="">
                 <a href="#"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 13 17" fill="none"
@@ -100,7 +98,7 @@
                 </a>
             </li>
 
-            <li class="list-none">
+            <li class="">
                 <a href="#"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 15 15" fill="none"
@@ -113,7 +111,7 @@
                 </a>
             </li>
 
-            <li class="list-none xl:absolute xl:bottom-3 2xl:bottom-5 relative">
+            <li class="flex-1 flex items-end">
                 <a href="../../index.php"
                     class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                     <span class="lg:text-[15px] xl:text-[16px] 2xl:text-[23px] text-[14px] ml-[41px] cursor-pointer">Logout</span>
@@ -129,7 +127,7 @@
     </nav>
     
     <!-- navbar -->
-    <div id="mon-divbar" class="navbar fixed z-40 p-[17.44px] lg:left-[270px] xl:left-[300px] 2xl:left-[400px] left-0 top-0 right-0 flex justify-between items-centerxl:h-[62px] 2xl:h-[82px] h-[60px] bg-[#fff]">
+    <div id="mon-divbar" class="navbar fixed z-40 p-[17.44px] lg:left-[270px] xl:left-[300px] 2xl:left-[400px] left-0 top-0 right-0 flex justify-between items-center xl:h-[62px] 2xl:h-[82px] h-[60px] bg-[#fff]">
         <div class="flex items-center justify-between lg:w-[20px] w-[100px]">
             <span class="lg:hidden block text-white text-4xl cursor-pointer" onclick="Opppen()">
                 <i class="bi bi-filter-left px-1 bg-[#00C1FE] rounded-md"></i>

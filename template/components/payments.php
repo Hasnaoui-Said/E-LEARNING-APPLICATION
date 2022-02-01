@@ -10,13 +10,12 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <!-- style -->
-    <link rel="stylesheet" href="../css/payments.css" />
 </head>
 
 <body class="font-[Montserrat] bg-[#E5E5E5]">
     <?php
-        include('dashboard.php');
-        include('../../assets/data/tables.php');
+        include_once('dashboard.php');
+        include_once('../../assets/data/tables.php');
     ?>
 
     <!-- main body -->
@@ -37,13 +36,10 @@
             <table class='mx-auto max-w-4xl w-full whitespace-nowrap overflow-hidden'>
                 <thead>
                     <tr class="text-[#000] text-[12px] capitalize text-left">
-                        <?php foreach($payments as $payment){?>
-                            <?php foreach($payment as $key=>$value){?>
-                                <th class="text-sm pr-6 pl-2 py-3" <?php if($key == 'Date') echo "colspan=\"2\"" ?>>
-                                <?php if($key != 'vue') echo $key ?></th>
-                            <?php }
-                            break;
-                        }?>
+                        <?php foreach($payments[0] as $key=>$value){?>
+                            <th class="text-sm pr-6 pl-2 py-3" <?php if($key == 'Date') echo "colspan=\"2\"" ?> >
+                            <?php if($key != 'vue') echo $key ?></th>
+                        <?php }?>
                     </tr>
                 </thead>
                 <tbody>

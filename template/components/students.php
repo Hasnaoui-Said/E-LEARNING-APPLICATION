@@ -10,7 +10,6 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <!-- style -->
-    <link rel="stylesheet" href="../css/payments.css" />
     <style>
         table{
             border-collapse: separate;
