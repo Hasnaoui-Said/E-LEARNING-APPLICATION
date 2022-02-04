@@ -1,0 +1,10 @@
+{
+    "payments" :[
+        {"payment Schedule": "Karthi","payments Schedule": "Karthi", "name":"first", "Bill Number":"00021332", "Amount Paid":"DHS 100,000", "Balance Amount":"DHS 500,000","Date":"05-Jan, 2022", "vue":"vue"},
+        {"payment Schedule": "Karthi","payments Schedule": "Karthi", "name":"first", "Bill Number":"00021332", "Amount Paid":"DHS 100,000", "Balance Amount":"DHS 500,000","Date":"05-Jan, 2022", "vue":"vue"},
+        {"payment Schedule": "Karthi","payments Schedule": "Karthi", "name":"first", "Bill Number":"00021332", "Amount Paid":"DHS 100,000", "Balance Amount":"DHS 500,000","Date":"05-Jan, 2022", "vue":"vue"},
+        {"payment Schedule": "Karthi","payments Schedule": "Karthi", "name":"first", "Bill Number":"00021332", "Amount Paid":"DHS 100,000", "Balance Amount":"DHS 500,000","Date":"05-Jan, 2022", "vue":"vue"},
+        {"payment Schedule": "Karthi","payments Schedule": "Karthi", "name":"first", "Bill Number":"00021332", "Amount Paid":"DHS 100,000", "Balance Amount":"DHS 500,000","Date":"05-Jan, 2022", "vue":"vue"},
+        {"payment Schedule": "Karthi","payments Schedule": "Karthi", "name":"first", "Bill Number":"00021332", "Amount Paid":"DHS 100,000", "Balance Amount":"DHS 500,000","Date":"05-Jan, 2022", "vue":"vue"}
+    ]
+}

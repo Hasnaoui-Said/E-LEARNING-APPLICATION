@@ -1,0 +1,6 @@
+{
+    "students" :[
+        {"profil":"../../assets/images/studentimg.png","name":"user", "email":"user@example.com", "phone":"+212654543232","Enroll Number":"54667875398","Date of admission":"08-Dec, 2021","actions":"null"},
+        {"profil":"../../assets/images/studentimg.png","name":"user", "email":"user@example.com", "phone":"+212654543232","Enroll Number":"54667875398","Date of admission":"08-Dec, 2021","actions":"null"}
+    ]
+}
