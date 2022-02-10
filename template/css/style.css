@@ -2,6 +2,7 @@
 :root {
   --bgc-sign-in: linear-gradient(69.66deg, #00c1fe 19.39%, #faffc1 96.69%);
   --font-family: "Montserrat", sans-serif;
+  --c: #ff9900;
 }
 html,
 body {

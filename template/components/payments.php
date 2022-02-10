@@ -36,14 +36,14 @@
             <table class='mx-auto max-w-4xl w-full whitespace-nowrap overflow-hidden'>
                 <thead>
                     <tr class="text-[#000] text-[12px] capitalize text-left">
-                        <?php foreach($payments[0] as $key=>$value){?>
+                        <?php foreach($PaymentDetails[0] as $key=>$value){?>
                             <th class="text-sm pr-6 pl-2 py-3" <?php if($key == 'Date') echo "colspan=\"2\"" ?> >
                             <?php if($key != 'vue') echo $key ?></th>
                         <?php }?>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($payments as $payment){?>
+                    <?php foreach($PaymentDetails as $payment){?>
                     <tr class="bg-white text-slate-800 text-[14px]">
                         <?php foreach($payment as $key=>$value){
                             if($key == 'vue'){?>
@@ -68,6 +68,7 @@
 
     </main>
     <!-- end main body -->
+    <script src="./../js/main.js"></script>
 </body>
 
 </html>

@@ -15,6 +15,7 @@
 <body class="font-[Montserrat] bg-[#E5E5E5]">
     <?php
         include('dashboard.php');
+        include('../../assets/data/tables.php');
     ?>
     <!-- main body -->
     <main class="absolute p-2 my-5 lg:top[60px] xl:top-[62px] 2xl:top[82px] top-[60px] lg:left-[270px] xl:left-[300px] 2xl:left-[400px] left-0 lg:w-[calc(100%-270px)] xl:w-[calc(100%-300px)] 2xl:w-[calc(100%-400px)] w-[100%]">
@@ -31,7 +32,7 @@
                     </svg>
                 </span>
                 <h2 class="pl-2 text-[14px] text-[#6C6C6C]">Students</h2>
-                <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold">243</span></p>
+                <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold"><?php echo $countStudent ?></span></p>
             </div>
 
             <div class="bg-[#FEF6FB] py-3 px-3 rounded-[8px] flex justify-around flex-col w-[90%] h-[157px]">
@@ -41,7 +42,7 @@
                     </svg>
                 </span>
                 <h2 class="pl-2 text-[14px] text-[#6C6C6C]">Cours</h2>
-                <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold">13</span></p>
+                <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold"><?php echo $countCours ?></span></p>
             </div>
 
             <div class="bg-[#FEFBEC] py-3 px-3  rounded-[8px] flex justify-around flex-col w-[90%] h-[157px]">
@@ -51,7 +52,7 @@
                     </svg>
                 </span>
                 <h2 class="pl-2 text-[14px] text-[#6C6C6C]">Payments</h2>
-                <p class="text-right">DHS<span class="w-min text-[32px] text-[#000] font-bold">556,000</span></p>
+                <p class="text-right">DHS<span class="w-min text-[32px] text-[#000] font-bold"><?php echo $totalAoundPaid ?></span></p>
             </div>
 
             <div class="py-3 px-3 rounded-[8px] flex justify-around flex-col w-[90%] h-[157px]"
@@ -68,11 +69,7 @@
         </div>
     </main>
     <!-- end main body -->
-    <script>
-        function Opppen() {
-            document.querySelector(".sidebar").classList.toggle("left-[-270px]");
-        }
-    </script>
+    <script src="./../js/main.js"></script>
 </body>
 
 </html>

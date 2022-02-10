@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-</head>
-
-<body class="font-[Montserrat] bg-[#E5E5E5]">
     <nav id="mon-sidebar">
         <ul class="sidebar list-none p-3 z-50 fixed flex flex-col items-center top-0 bottom-0 lg:left-0 left-[-270px] xl:w-[300px] 2xl:w-[400px] w-[270px] overflow-y-auto  text-center text-black bg-[#FAFFC1]">
             <li class="text-black text-xl w-[200px] flex lg:justify-start lg:ml-[-10px] justify-between items-center">
@@ -47,7 +33,7 @@
             </li>
 
             <li class="">
-                <a href="#"
+                <a href="cours.php"
                 class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                 <svg class="ml-[41px] cursor-pointer" width="25" height="22" viewBox="0 0 12 15" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -148,18 +134,3 @@
             <i class="bi bi-bell text-[#C4C4C4] text-[30px] ml-[33px]"></i>
         </div>
     </div>
-    <!-- end navbar -->
-
-    <!-- main body -->
-    <main class="absolute p-2 my-5 lg:top[60px] xl:top-[62px] 2xl:top[82px] top-[60px] lg:left-[270px] xl:left-[300px] 2xl:left-[400px] left-0 lg:w-[calc(100%-270px)] xl:w-[calc(100%-300px)] 2xl:w-[calc(100%-400px)] w-[100%]">
-
-    </main>
-    <!-- end main body -->
-    <script>
-        function Opppen() {
-            document.querySelector(".sidebar").classList.toggle("left-[-270px]");
-        }
-    </script>
-</body>
-
-</html>
