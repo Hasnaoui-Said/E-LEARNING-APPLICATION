@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require_once(dirname(__FILE__) . './../data/models/data_provider.php');
+    $pro = new DataProvider();
+    $isloged = $pro->isLoged();
+    if(!$isloged){
+        $pro->redirect("./../../index.php");
+        die();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

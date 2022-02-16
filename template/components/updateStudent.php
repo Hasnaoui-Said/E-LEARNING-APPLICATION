@@ -1,16 +1,25 @@
 <?php
-        if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            $enroll = $_GET['enroll'] ?? "";
-            $type = $_GET['type'] ?? "";
-            if($type === 'update'){ 
-                if(isset($enroll)){ 
-                    require_once(dirname(__FILE__) . './../data/models/student.php');
-                    $new_student = new Student();
-                    $myStudent = $new_student->getStudentByEnroll($enroll);
-                }
+    session_start();
+    require_once(dirname(__FILE__) . './../data/models/data_provider.php');
+    $pro = new DataProvider();
+    $isloged = $pro->isLoged();
+    if(!$isloged){
+        $pro->redirect("./../../index.php");
+        die();
+    }
+
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $enroll = $_GET['enroll'] ?? "";
+        $type = $_GET['type'] ?? "";
+        if($type === 'update'){ 
+            if(isset($enroll)){ 
+                require_once(dirname(__FILE__) . './../data/models/student.php');
+                $new_student = new Student();
+                $myStudent = $new_student->getStudentByEnroll($enroll);
             }
         }
-    ?>
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

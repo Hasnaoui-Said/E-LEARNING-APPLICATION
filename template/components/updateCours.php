@@ -1,16 +1,24 @@
 <?php
-        if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            $id = $_GET['id'] ?? "";
-            $type = $_GET['type'] ?? "";
-            if($type === 'update'){ 
-                if(isset($id)){ 
-                    require_once(dirname(__FILE__) . './../data/models/cours.php');
-                    $new_Cours = new Cours();
-                    $myCours = $new_Cours->getCoursById($id);
-                }
+    session_start();
+    require_once(dirname(__FILE__) . './../data/models/data_provider.php');
+    $pro = new DataProvider();
+    $isloged = $pro->isLoged();
+    if(!$isloged){
+        $pro->redirect("./../../index.php");
+        die();
+    }
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $id = $_GET['id'] ?? "";
+        $type = $_GET['type'] ?? "";
+        if($type === 'update'){ 
+            if(isset($id)){ 
+                require_once(dirname(__FILE__) . './../data/models/cours.php');
+                $new_Cours = new Cours();
+                $myCours = $new_Cours->getCoursById($id);
             }
         }
-    ?>
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

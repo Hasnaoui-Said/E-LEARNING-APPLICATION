@@ -13,5 +13,8 @@
         public function redirect($page){
             header("location: $page");
         }
+        static function isLoged(){
+            return (isset($_SESSION['auth']) && isset($_SESSION['auth']['email']) && isset($_SESSION['auth']['pass']));
+        }
     }
 ?>

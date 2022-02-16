@@ -1,15 +1,21 @@
+<?php
+    extract($_SESSION['auth']);
+    require_once(dirname(__FILE__) . './../data/models/users.php');
+    $user_conn = new Users();
+    $isUserConnect = $user_conn->getUsersByPassAndEmail($email, $pass);
+?>
     <nav id="mon-sidebar">
         <ul class="sidebar list-none p-3 z-50 fixed flex flex-col items-center top-0 bottom-0 lg:left-0 left-[-270px] xl:w-[300px] 2xl:w-[400px] w-[270px] overflow-y-auto  text-center text-black bg-[#FAFFC1]">
             <li class="text-black text-xl w-[200px] flex lg:justify-start lg:ml-[-10px] justify-between items-center">
                 <h1 class="pl-2 font-bold text-[25px] border-l-[4px] border-[#00C1FE] cursor-pointer">
-                    E-classe
+                    E-classe 
                 </h1>
                 <i class="bi bi-x px-3 py-1 text-black cursor-pointer lg:hidden" onclick="Opppen()"></i>
             </li>
             <li class="p-2.5 m-3 flex flex-col items-center rounded-md px-4 duration-300 text-black">
                 <img class="rounded-full cursor-pointer" src="../../assets/images/pexels-photo.png" alt="" width="80" />
-                <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1 font-bold">Admin name</span>
-                <a href="#" class="lg:text-[17px] xl:text-[18px] 2xl:text-[23px] text-[15px] hover:text-[#00C1FE] cursor-pointer mt-0">Admin</a>
+                <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1 font-bold"><?=$isUserConnect['firstName'] ?></span>
+                <a href="#" class="lg:text-[17px] xl:text-[18px] 2xl:text-[23px] text-[15px] hover:text-[#00C1FE] cursor-pointer mt-0"><?=$isUserConnect['role'] ?></a>
             </li>
 
             <li
@@ -98,7 +104,7 @@
             </li>
 
             <li class="flex-1 flex items-end">
-                <a href="../../index.php"
+                <a href="./logout.php"
                     class="lg:p-1.5 xl:p-3 2xl:p-4 p-1 w-[193px] flex items-center justify-start rounded-md duration-300 cursor-pointeur hover:bg-[#00C1FE] text-black">
                     <span class="lg:text-[15px] xl:text-[16px] 2xl:text-[23px] text-[14px] ml-[41px] cursor-pointer">Logout</span>
                     <svg class="ml-4 cursor-pointer" width="25" height="22" viewBox="0 0 17 13" fill="none"

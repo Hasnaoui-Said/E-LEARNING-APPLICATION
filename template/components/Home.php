@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require_once(dirname(__FILE__) . './../data/models/data_provider.php');
+    $pro = new DataProvider();
+    $isloged = $pro->isLoged();
+    if(!$isloged){
+        $pro->redirect("./../../index.php");
+        die();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +41,7 @@
                         fill="#74C1ED" />
                     </svg>
                 </span>
+                
                 <h2 class="pl-2 text-[14px] text-[#6C6C6C]">Students</h2>
                 <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold"><?php echo $countStudent ?></span></p>
             </div>
@@ -63,7 +74,7 @@
                     </svg>
                 </span>
                 <h2 class="text-[14px] pl-2 text-[#fff]">Users</h2>
-                <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold">3</span></p>
+                <p class="text-right"><span class="w-min text-[32px] text-[#000] font-bold"><?php echo $countUsers ?></span></p>
             </div>
 
         </div>

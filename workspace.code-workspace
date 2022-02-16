@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\first-php"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "first-php"
+	}
+}
