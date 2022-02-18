@@ -14,7 +14,12 @@
             header("location: $page");
         }
         static function isLoged(){
-            return (isset($_SESSION['auth']) && isset($_SESSION['auth']['email']) && isset($_SESSION['auth']['pass']));
+            return (
+                isset($_SESSION['auth']) &&
+                isset($_SESSION['auth']['email']) &&
+                isset($_SESSION['auth']['pass']) &&
+                (time() - $_SESSION['auth']['session_gc_lifetime'] < 60 * 60)
+                );
         }
     }
 ?>

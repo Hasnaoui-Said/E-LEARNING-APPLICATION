@@ -15,7 +15,7 @@
                 $enroll_Number = rand(1, 10000000);
             }while(in_array($enroll_Number, $enroll_Numbers));
 
-            $sql = "INSERT INTO student (name, email, phone, enroll_Number) 
+            $sql = "INSERT INTO student (name, email, phone, enroll_Number)
                         VALUES (:name, :email, :phone, :enroll_Number)";
             $smt = $db->prepare($sql);
             $smt->execute([
@@ -82,7 +82,7 @@
             $query = null;
             $db = null;
             foreach($data as $nomber){
-                $arr[] = $nomber['enroll_Number'] ;
+                $arr[] = $nomber['enroll_Number'];
             }
             return $arr;
         }
@@ -130,7 +130,8 @@
                 return;
             }
 
-            $sql = 'UPDATE student SET name = :name, email = :email, phone = :phone, solde = :solde
+            $sql = 'UPDATE student 
+                        SET name = :name, email = :email, phone = :phone, solde = :solde
                         WHERE enroll_Number = :enroll_Number';
             $smt = $db->prepare($sql);
             $smt->execute([

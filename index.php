@@ -5,16 +5,19 @@
     $pro = new DataProvider();
     $isloged = $pro->isLoged();
     if($isloged){
+        session_unset();
+        session_destroy();
         $pro->redirect("./template/components/home.php");
         die();
     }
+
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])){
             extract($_POST);
             require_once(dirname(__FILE__) . './template/data/models/users.php');
             $new_Users = new Users();
-            $isUsers = $new_Users->getUsersByPassAndEmail($email, $pass);
+            $isUsers = $new_Users->getUsersByPassAndEmail($email, hash('ripemd160',$pass));
             $renember = $_POST['renember'] ?? "";
             // echo "renember ".$renember;
             if($renember == 'on'){
@@ -26,9 +29,11 @@
             }
             if($isUsers != null){
                 $_SESSION['auth'] = array(
+                    'session_gc_lifetime'=> time(),
                     'email'=> $email,
-                    'pass'=> $pass,
-                    'role'=> $isUsers['role']
+                    'pass'=> hash('ripemd160',($pass)),
+                    'role'=> $isUsers['role'],
+                    'firstName'=> $isUsers['firstName']
                 );
                 header('Location: ./template/components/home.php');
             }
@@ -37,7 +42,6 @@
             }
         }
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +79,7 @@
                             <p>Enter your credentials to access your account</p>
                         </div>
                         <?php if(isset($status)){ ?>
-                            <small class="py-2 alert alert-danger"><?php echo $status ?? ""; ?></small>
+                            <small class="py-2 alert alert-danger"><?php echo $status . $_SESSION['auth']['session_gc_lifetime'] ?? ""; ?></small>
                         <?php } ?>
                     </div>
                 </div>
@@ -96,7 +100,7 @@
                                 </div>
                                 <div class="mb-1">
                                     <div class="form-check">
-                                        <input name='renember' type="checkbox" class="form-check-input">
+                                        <input name='renember' type="checkbox" class="form-check-input" checked>
                                         <label class="form-check-label">Check me out</label>
                                     </div>
                                 </div>

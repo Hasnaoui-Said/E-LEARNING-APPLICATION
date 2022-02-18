@@ -63,7 +63,6 @@
                 </thead>
                 <tbody>
                     <?php 
-                    $count = 0;
                     foreach($students as $student){?>
                     <tr class="bg-white text-slate-800 text-[14px] capitalize">
                         <td class="pr-6 pl-2 py-3">

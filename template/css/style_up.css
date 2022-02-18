@@ -8,15 +8,43 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: auto;
 }
 body {
   font: var(--font-family);
   background: var(--bgc-sign-in);
 }
+
+main{
+  height: 100vh;
+}
+
+@media screen and (max-width:500px){
+  main{
+    height: 100%;
+  }
+  .pwd{
+    flex-direction: column;
+  }
+}
 .card {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2) !important;
   border-radius: 20px !important;
+}
+.logo {
+  border-left: 6px solid #00c1fe;
+  margin-left: 20px;
+}
+
+.logo strong {
+  font-size: 32px;
+  padding: 12.5px;
+}
+h1 {
+  font-size: 1.4rem !important;
+}
+.btn {
+  background: #00c1fe !important;
+  border: none !important;
 }
 
 
