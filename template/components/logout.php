@@ -3,5 +3,5 @@
     session_unset();
     session_destroy();
     header('location: ./../../index.php');
-    echo ("kddnvfnv efv le");
+    // echo ("kddnvfnv efv le");
 ?>

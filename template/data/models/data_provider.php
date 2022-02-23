@@ -13,13 +13,20 @@
         public function redirect($page){
             header("location: $page");
         }
-        static function isLoged(){
+        public function isLoged(){
+            if(isset($_SESSION['auth']['session_gc_lifetime'])){
+                if(time() - $_SESSION['auth']['session_gc_lifetime'] > 15){
+                    session_unset();
+                    session_destroy();
+                    return false;
+                }
+            }
             return (
                 isset($_SESSION['auth']) &&
                 isset($_SESSION['auth']['email']) &&
                 isset($_SESSION['auth']['pass']) &&
-                (time() - $_SESSION['auth']['session_gc_lifetime'] < 60 * 60)
-                );
+                (time() - $_SESSION['auth']['session_gc_lifetime'] < 15)
+            );
         }
     }
 ?>

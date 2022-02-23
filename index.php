@@ -3,14 +3,13 @@
     
     require_once(dirname(__FILE__) . './template/data/models/data_provider.php');
     $pro = new DataProvider();
+
+    
     $isloged = $pro->isLoged();
     if($isloged){
-        session_unset();
-        session_destroy();
         $pro->redirect("./template/components/home.php");
         die();
     }
-
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])){
