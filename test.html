@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .model {
+        margin: 0;
+        padding: 0;
+        max-width: 500px;
+        height: 500px;
+        background-color: blue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<body>
+    <button id="said">Open</button>
+    <div class="model hidden">
+        <form>
+            <div class="card">
+                <div class="form-control">
+                    <label for="">name</label>
+                    <input type="text">
+                </div>
+                <div class="form-control">
+                    <label for="">email</label>
+                    <input type="email">
+                </div>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+
+    <div class="">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, atque.
+        Tempora molestiae iste numquam laborum. Aliquam dicta vitae facilis sed!
+        Sit deserunt fuga reprehenderit soluta totam fugit exercitationem unde aperiam.
+        Laudantium quasi tempore veniam velit reiciendis. Ipsa eligendi dolorem ducimus!
+        Facilis, molestias alias amet harum nihil consectetur repellendus rerum quasi.
+        Cupiditate consequatur in adipisci odit quibusdam eveniet, itaque reprehenderit veritatis?
+        Quisquam ex recusandae architecto officia, cupiditate accusantium. Inventore, voluptatibus perferendis?
+        Labore, provident vel rem distinctio qui doloremque laboriosam dolorem vitae.
+        Nobis atque accusamus dolores architecto animi est alias eos ratione.
+        Omnis, blanditiis. Consequatur error distinctio earum fuga eius dolorem nostrum.
+        Incidunt et magnam laborum aliquam quae perspiciatis nobis rerum non.
+        Eaque cumque ipsam quas quisquam cupiditate voluptatum delectus molestiae distinctio.
+        Nihil iure maxime culpa animi, impedit excepturi asperiores numquam voluptatem?
+        Illo accusamus officia iure. Aliquam rerum a culpa libero vitae.
+        Officia atque perferendis alias in mollitia repellendus reiciendis deserunt hic.
+        Quam voluptate asperiores deserunt, iure commodi deleniti blanditiis consectetur labore!
+        Fugiat officia commodi tenetur dolor ut mollitia? Debitis, doloremque soluta.
+        Officiis, dolore distinctio culpa porro minus tempore animi quibusdam possimus.
+        Vitae esse necessitatibus at corrupti similique quasi, ullam temporibus culpa!
+        Laborum obcaecati cupiditate quidem iste assumenda ab non quibusdam hic!
+        Rerum ducimus repellendus a itaque nulla consequatur, mollitia maxime autem?
+        Velit et dolorum quia dolor asperiores. At praesentium animi vero?
+        Dolor autem voluptatibus unde ratione nisi maiores repudiandae officia est.
+        Laboriosam doloremque nemo numquam ipsam cumque adipisci, cum porro accusantium!
+        Ipsa esse at numquam inventore ipsum. Consequuntur quam nam numquam?
+        Sit vero aliquam quod facere ratione, recusandae animi perspiciatis et!
+        Debitis iure non fugiat quae similique expedita delectus? Dolores, consectetur.
+        Et itaque error assumenda est vero facere quisquam eligendi ullam?
+        Omnis hic nam voluptates reprehenderit nihil aut in dolore quasi.
+        Explicabo vero delectus tempore, omnis vitae at minus non perferendis!
+        In excepturi repellat doloribus reprehenderit suscipit quam veniam quis dignissimos!
+        Voluptates voluptate minus obcaecati corrupti amet sequi, maiores delectus illo!
+        Impedit, maxime! Ipsam aspernatur blanditiis dignissimos, earum beatae ratione animi?
+    </div>
+    <script>
+        let btn = document.querySelector('button')
+        let form = document.querySelector('form')
+        btn.addEventListener('click', (e) => {
+            console.log(btn.id)
+            let act = `formulaire.php?id=${btn.id}`
+            act = encodeURI(act)
+            form.setAttribute('action', act);
+            form.setAttribute('method', 'GET');
+            console.log(act)
+            document.querySelector('.model').classList.toggle('hidden')
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

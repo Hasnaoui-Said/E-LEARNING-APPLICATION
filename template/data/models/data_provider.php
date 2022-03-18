@@ -15,7 +15,7 @@
         }
         public function isLoged(){
             if(isset($_SESSION['auth']['session_gc_lifetime'])){
-                if(time() - $_SESSION['auth']['session_gc_lifetime'] > 15){
+                if(time() - $_SESSION['auth']['session_gc_lifetime'] > 3600 * 24){
                     session_unset();
                     session_destroy();
                     return false;
@@ -25,7 +25,7 @@
                 isset($_SESSION['auth']) &&
                 isset($_SESSION['auth']['email']) &&
                 isset($_SESSION['auth']['pass']) &&
-                (time() - $_SESSION['auth']['session_gc_lifetime'] < 15)
+                (time() - $_SESSION['auth']['session_gc_lifetime'] < 3600 * 24)
             );
         }
     }

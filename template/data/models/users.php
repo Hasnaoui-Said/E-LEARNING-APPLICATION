@@ -1,9 +1,7 @@
 <?php
     require_once('data_provider.php');
-
-    class Users extends DataProvider{
-
-        public function setUser($email, $pass){
+    class User extends DataProvider{
+        public function setUser($email, $pass,$username, $phone){
 
             $db = $this->connect();
             
@@ -11,13 +9,15 @@
                 return;
             }
 
-            $sql = "INSERT INTO users (email,pass) VALUES (:email,:pass)";
+            $sql = "INSERT INTO users (email, pass, username, phone) VALUES (:email,:pass, :username, :phone)";
             $smt = $db->prepare($sql);
 
             $smt->execute(
                 [
                     ":email"=> $email,
                     ":pass"=> $pass,
+                    ":phone"=> $phone,
+                    ":username"=> $username,
                 ]
             );
 
@@ -70,6 +70,54 @@
             $smt->execute([
                 ":email"=> $email,
                 ":pass"=> $pass
+            ]);
+            $data = $smt->fetch(PDO::FETCH_ASSOC);
+
+            $query = null;
+            $db = null;
+
+            if($data == null)
+                return null;
+            
+            return $data;
+        }
+        public function getUsersByEmail($email){
+
+            $db = $this->connect();
+
+            if($db == null){
+                return;
+            }
+
+            $query = 'SELECT * FROM users WHERE email = :email';
+
+            $smt = $db->prepare($query);
+            $smt->execute([
+                ":email"=> $email
+            ]);
+            $data = $smt->fetch(PDO::FETCH_ASSOC);
+
+            $query = null;
+            $db = null;
+
+            if($data == null)
+                return null;
+            
+            return $data;
+        }
+        public function getUsersByUserName($username){
+
+            $db = $this->connect();
+
+            if($db == null){
+                return;
+            }
+
+            $query = 'SELECT * FROM users WHERE username = :username';
+
+            $smt = $db->prepare($query);
+            $smt->execute([
+                ":username" => $username
             ]);
             $data = $smt->fetch(PDO::FETCH_ASSOC);
 

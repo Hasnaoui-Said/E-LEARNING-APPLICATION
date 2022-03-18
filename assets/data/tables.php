@@ -14,7 +14,7 @@
     $paymentDetail = new PaymentDetails();
     $PaymentDetails = $paymentDetail->getAllPaymentDetails();
     $totalAoundPaid = $paymentDetail->getTotalAoundPaid();
-    $new_Users = new Users();
+    $new_Users = new User();
     $countUsers = $new_Users->getCountUsers();
     // $payments = getPayments("../../assets/data/data_payments.json");
 

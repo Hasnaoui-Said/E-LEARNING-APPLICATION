@@ -27,9 +27,11 @@ function add__user(){
 
 function open_confermation_delete_stu(){
     document.querySelector(".hamid").classList.toggle('hidden');
-    // ./../data/userTraitement.php?type=update&enroll=<?php echo $student['enroll_Number']; ?>
 }
 function open_confermation_delete_cours(){
     document.querySelector(".add_cours").classList.toggle('hidden');
-    // ./../data/userTraitement.php?type=update&enroll=<?php echo $student['enroll_Number']; ?>
+}
+function updateStudent(){
+    document.querySelector(".updateStudent").classList.toggle('hidden');
+    // href="./updateStudent.php?type=update&enroll=<?php echo $student['enroll_Number'];?>"
 }

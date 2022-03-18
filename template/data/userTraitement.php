@@ -1,6 +1,12 @@
 <?php
     require_once(dirname(__FILE__) . './models/student.php');
     require_once('./models/data_provider.php');
+    $pro = new DataProvider();
+    $isloged = $pro->isLoged();
+    if($isloged){
+        $pro->redirect("./../../");
+        die();
+    }
     
     if($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET'){
         $type = $_GET['type'] ?? "";
@@ -11,7 +17,7 @@
                 $email = $_POST['email'] ;
                 $phone = $_POST['phone'] ?? "";
                 $new_student = new Student();
-                $new_student->setStudent($name, $email, $phone);
+                $new_student->setStudent($name, $email, $phone, date('Y-m-d'));
                 $dir = new DataProvider();
                 $dir->redirect('./../components/students.php');
                 die();

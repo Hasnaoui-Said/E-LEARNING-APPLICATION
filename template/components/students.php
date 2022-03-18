@@ -8,6 +8,18 @@
         die();
     }
     $enroll = "";
+
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $enroll = $_GET['enroll'] ?? "";
+        $type = $_GET['type'] ?? "";
+        if($type === 'update'){
+            if(isset($enroll)){ 
+                require_once(dirname(__FILE__) . './../data/models/student.php');
+                $new_student = new Student();
+                $myStudent = $new_student->getStudentByEnroll($enroll);
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +88,7 @@
                         <td class="text-sm pr-6 pl-2 py-3"><?php echo $student['date_admission']?></td>
                         <td class="pr-6 pl-2">
                             <div class="flex gap-5">
-                            <a href="./updateStudent.php?type=update&enroll=<?php echo $student['enroll_Number'];?>" class="py-1">
+                            <a href="./students.php?type=update&enroll=<?php echo $student['enroll_Number'];?>" class="py-1" onclick="updateStudent()">
                                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M18.3033 2.08777L16.9113 0.695801C16.4478 0.231934 15.8399 0 15.2321 0C14.6242 0 14.0164 0.231934 13.5525 0.69543L0.475916 13.772L0.00462689 18.0107C-0.0547481 18.5443 0.365701 19 0.88783 19C0.920858 19 0.953885 18.9981 0.987654 18.9944L5.22332 18.5265L18.3036 5.44617C19.231 4.51881 19.231 3.01514 18.3033 2.08777ZM4.67818 17.3924L1.2259 17.775L1.61035 14.3175L11.4031 4.52475L14.4747 7.59629L4.67818 17.3924ZM17.4639 4.60676L15.3141 6.7565L12.2426 3.68496L14.3923 1.53521C14.6164 1.31107 14.9148 1.1875 15.2321 1.1875C15.5494 1.1875 15.8474 1.31107 16.0719 1.53521L17.4639 2.92719C17.9266 3.39031 17.9266 4.14363 17.4639 4.60676Z" fill="#00C1FE"/>
                                 </svg>
@@ -93,6 +105,59 @@
                 </tbody>
             </table>
         </div>
+        <!-- update -->
+        <div class="">
+            <div class="absolute hidden updateStudent top-0 left-1/2 translate-x-[-50%] flex justify-center align-items w-full sm:max-w-sm">
+                <div class="w-full max-w-lg bg-[#FAFFC1] shadow rounded border border-bg-[#00C1FE] m-2">
+                    <div class="flex justify-end p-0">
+                        <a href='students.php'
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center cursor-pointer dark:hover:bg-gray-800 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <form action="./../data/userTraitement.php?type=update&enroll=<?php echo $enroll; ?>" method="POST" class="px-8 pt-6 pb-8 capitalize">
+                    <h3 class="mb-4 text-[17px] font-bold text-center">
+                            Update 
+                        </h3>
+                        <div class="mb-3">
+                            <label class="block text-gray-700 text-sm font-bold mb-1" for="username">
+                                Name:
+                            </label>
+                            <input required type="text" name="name" value="<?php echo $myStudent['name'] ?? ""; ?>" placeholder="name" class="shadow appearance-none border focus:border-[#00C1FE] focus:outline-none focus:outline-none rounded w-full px-3 py-2 text-gray-700 leading-tight focus:shadow-outline">
+                        </div>
+                        <div class="mb-3">
+                            <label class="block text-gray-700 text-sm font-bold mb-1" for="email">
+                                Email:
+                            </label>
+                            <input required type="Email" name="email" value="<?php echo $myStudent['email'] ?? ""; ?>" placeholder="email" class="shadow appearance-none border focus:border-[#00C1FE] focus:outline-none rounded w-full px-3 py-2 text-gray-700 mb-2 leading-tight focus:shadow-outline">
+                        </div>
+                        <div class="mb-3">
+                            <label class="block text-gray-700 text-sm font-bold mb-1" for="email">
+                                Phone:
+                            </label>
+                            <input type="text" name="phone" value="<?php echo $myStudent['phone'] ?? ""; ?>" placeholder="Phone" class="shadow appearance-none border focus:border-[#00C1FE] focus:outline-none rounded w-full px-3 py-2 text-gray-700 mb-2 leading-tight focus:shadow-outline">
+                        </div>
+                        <div class="mb-3">
+                            <label class="block text-gray-700 text-sm font-bold mb-1" for="email">
+                                Solde:
+                            </label>
+                            <input type="number" name="solde" value="<?php echo $myStudent['solde'] ?? ""; ?>" placeholder="Solde" class="shadow appearance-none border focus:border-[#00C1FE] focus:outline-none rounded w-full px-3 py-2 text-gray-700 mb-2 leading-tight focus:shadow-outline">
+                        </div>
+                        <div class="flex items-center justify-around">
+                            <button type="submit" class="bg-[#00C1FE] hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline">
+                                Update
+                            </button>
+                            <a href='students.php' class="cursor-pointer hover:bg-white p-1 rounded-lg">Close</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <!-- Modale  onclick="openModeLAddStu()" -->
         <div class="hidden openModeLAddStu flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full">
             <div class="relative px-4 w-full max-w-md h-full md:h-auto">
@@ -100,7 +165,7 @@
                 <div class="relative flex flex-col rounded-lg drop-shadow-2xl bg-gray-300">
 
                     <div class="flex justify-end p-0">
-                        <button type="button"  onclick="closeModeLAddStu()"
+                        <button type="button" onclick="closeModeLAddStu()"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -159,7 +224,6 @@
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -196,21 +260,32 @@
             </div>
         </div>
     </main>
-    <!-- end main body -->
     <script src="./../js/main.js"></script>
+    <!-- end main body -->
     <?php
         if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            $enroll = $_GET['enroll'] ?? "";
-            $type = $_GET['type'] ?? "";
             if($type === 'delete'){ 
                 if(isset($enroll)){ ?>
                 <script>
                     open_confermation_delete_stu();
-                </script>
+                    </script>
             <?php
                 }
             }
         }
+    ?>
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'GET'){
+            if($type === 'update'){
+                if(isset($enroll)){?>
+                <script>
+                    updateStudent();
+                </script>
+                <?php
+                }
+            }
+        }
+        
     ?>
 </body>
 

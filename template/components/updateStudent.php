@@ -39,7 +39,7 @@
         include('dashboard.php');
     ?>
     <!-- main body -->
-    <main class="absolute p-2 my-5 lg:top[60px] xl:top-[62px] 2xl:top[82px] top-[60px] lg:left-[270px] xl:left-[300px] 2xl:left-[400px] left-0 lg:w-[calc(100%-270px)] xl:w-[calc(100%-300px)] 2xl:w-[calc(100%-400px)] w-[100%]">
+    <div class="absolute p-2 my-5 lg:top[60px] xl:top-[62px] 2xl:top[82px] top-[60px] lg:left-[270px] xl:left-[300px] 2xl:left-[400px] left-0 lg:w-[calc(100%-270px)] xl:w-[calc(100%-300px)] 2xl:w-[calc(100%-400px)] w-[100%]">
         <div class="flex justify-center align-items">
             <div class="w-full max-w-lg">
                 <form action="./../data/userTraitement.php?type=update&enroll=<?php echo $enroll; ?>" method="POST" class="bg-[#FAFFC1] shadow rounded border border-bg-[#00C1FE] px-8 pt-6 pb-8 mb-4 capitalize">
@@ -78,7 +78,7 @@
                 </form>
             </div>
         </div>
-    </main>
+    </div>
     <!-- end main body -->
     <script src="./../js/main.js"></script>
 </body>

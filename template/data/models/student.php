@@ -3,7 +3,7 @@
 
     class Student extends DataProvider{
 
-        public function setStudent($name, $email, $phone){
+        public function setStudent($name, $email, $phone, $date){
 
             $db = $this->connect();
             if($db == null){
@@ -15,14 +15,15 @@
                 $enroll_Number = rand(1, 10000000);
             }while(in_array($enroll_Number, $enroll_Numbers));
 
-            $sql = "INSERT INTO student (name, email, phone, enroll_Number)
-                        VALUES (:name, :email, :phone, :enroll_Number)";
+            $sql = "INSERT INTO student (name, email, phone, enroll_Number, date_admission)
+                        VALUES (:name, :email, :phone, :enroll_Number, :date_admission)";
             $smt = $db->prepare($sql);
             $smt->execute([
                     ":name"=> $name,
                     ":email"=> $email,
                     ":phone"=> $phone,
-                    ":enroll_Number"=> $enroll_Number
+                    ":enroll_Number"=> $enroll_Number,
+                    ":date_admission"=> $date
               ]);
 
             $smt = null;

@@ -17,7 +17,7 @@
             </li>
             <li class="p-2.5 m-3 flex flex-col items-center rounded-md px-4 duration-300 text-black">
                 <img class="rounded-full cursor-pointer" src="../../assets/images/pexels-photo.png" alt="" width="80" />
-                <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1 font-bold"><?=$_SESSION['auth']['firstName'] ?></span>
+                <span class="lg:text-[20px] xl:text-[19px] 2xl:text-[25px] text-[17] cursor-pointer mt-1 font-bold"><?=$_SESSION['auth']['username'] ?></span>
                 <a href="#" class="lg:text-[17px] xl:text-[18px] 2xl:text-[23px] text-[15px] hover:text-[#00C1FE] cursor-pointer mt-0"><?=$_SESSION['auth']['role'] ?></a>
             </li>
 

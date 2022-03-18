@@ -1,10 +1,7 @@
 <?php
     session_start();
-    
     require_once(dirname(__FILE__) . './template/data/models/data_provider.php');
     $pro = new DataProvider();
-
-    
     $isloged = $pro->isLoged();
     if($isloged){
         $pro->redirect("./template/components/home.php");
@@ -15,7 +12,7 @@
         if(isset($_POST) && !empty($_POST['email']) && !empty($_POST['pass'])){
             extract($_POST);
             require_once(dirname(__FILE__) . './template/data/models/users.php');
-            $new_Users = new Users();
+            $new_Users = new User();
             $isUsers = $new_Users->getUsersByPassAndEmail($email, hash('ripemd160',$pass));
             $renember = $_POST['renember'] ?? "";
             // echo "renember ".$renember;
@@ -32,7 +29,7 @@
                     'email'=> $email,
                     'pass'=> hash('ripemd160',($pass)),
                     'role'=> $isUsers['role'],
-                    'firstName'=> $isUsers['firstName']
+                    'username'=> $isUsers['username']
                 );
                 header('Location: ./template/components/home.php');
             }
@@ -78,7 +75,7 @@
                             <p>Enter your credentials to access your account</p>
                         </div>
                         <?php if(isset($status)){ ?>
-                            <small class="py-2 alert alert-danger"><?php echo $status . $_SESSION['auth']['session_gc_lifetime'] ?? ""; ?></small>
+                            <small class="py-2 mx-4 alert alert-danger"><?php echo $status ?? ""; ?></small>
                         <?php } ?>
                     </div>
                 </div>
@@ -87,21 +84,19 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-2">
-                                    <label class="form-label" for="email">Email</label>
+                                    <label class="form-label" for="email">Email: </label><span class="invalidEmail"></span>
                                     <input id="email" name="email" type="email" required value="<?=$_COOKIE['email'] ?? ""; ?>" class="form-control" placeholder="email@example.com" />
                                 </div>
                                 <div class="mb-1">
-                                    <div class="d-flex justify-content-between"> 
-                                        <label class="form-label" for="pass">Password</label>
-                                        <a class="text-secondary text-info text-decoration-none" href="#">Forgot password?</a>
-                                    </div>
+                                    <label class="form-label" for="pass">Password</label><span class="invalidPass"></span>
                                     <input id="pass" name="pass" type="password" required value="<?=$_COOKIE['password'] ?? ""; ?>" class="form-control" placeholder="Password" />
                                 </div>
-                                <div class="mb-1">
+                                <div class="mb-1 d-flex  justify-content-between">
                                     <div class="form-check">
                                         <input name='renember' type="checkbox" class="form-check-input" checked>
                                         <label class="form-check-label">Check me out</label>
                                     </div>
+                                    <a class="text-secondary text-info text-decoration-none" href="#">Forgot password?</a>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-2 d-grid gap-2">
@@ -118,6 +113,8 @@
             </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

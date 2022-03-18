@@ -158,7 +158,6 @@
                 </div>
             </div>
         </div>
-        <!-- Delete Student Modal -->
         <div class="hamid hidden flex overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center">
             <div class="relative px-4 w-full max-w-md h-full md:h-auto">
                 <!-- Modal content -->
